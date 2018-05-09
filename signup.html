@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  body{
+    background-image: url(5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+     #logo{
+       top:0px;
+       height: 150px;
+       width: 150px;
+       z-index: 0;
+          }
+        #nav{
+      margin-top: 5px;
+      background-color: transparent;
+      border: none;
+      z-index: 100;
+        } 
+         nav,.navbar,.navbar-default{
+          background-color: transparent;
+          border-color: transparent;
+          padding-bottom:0;
+          margin-bottom: 0;
+          z-index: 100;
+        }
+        .navbar-default .navbar-brand{
+          color: #ffffff;
+   
+        }
+        .navbar-default .navbar-nav>li>a{
+          color: #ffffff;
+        }
+        .navbar-default .navbar-nav>.active>a{
+          color: #212121;
+        }
+        .form-group{
+          color: #ffffff;
+        }
+
+             #initial{
+              display: none;
+            }
+            @media screen and (max-width: 500px){
+              #user{
+                display: none;
+              }
+              #initial{
+              display: flex;
+              }
+            }
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+	function check(){
+		var uname = document.getElementById('name').value;
+		var passid=document.getElementById('pwd').value;
+		var uemail =document.getElementById('email').value;
+		var uadhar= document.getElementById('aadhar').value;
+		var upan=document.getElementById('pan').value;
+		var ubirth=document.getElementById('bd').value;
+		var umobile = document.getElementById('mobile').value;
+		var uadd= document.getElementById('addr').value;
+		var p = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+		var letters = /^[0-9a-zA-Z]+$/;
+		if(uname.length < 10)
+		{
+		window.alert("Please enter a valid name!");
+		}
+		else if(passid.length <= 10){
+			alert("Password should be atleast 10 characters long");
+		}
+		else if(uemail.length == 0){
+			alert("Email is not valid.");
+		}
+		else if(uadhar.length == 12){
+			alert("Adhar Card Number is not valid!");
+		}
+		else if(upan.length == 10){
+			alert("PAN is not valid!");
+		}
+		else if(umobile.length == 10){
+			alert("Enter valid mobile number!");
+		}
+		else if(p.test(ubirth.value) == false){
+			alert("Enter valid birth date!");
+		}
+		else if(letters.test(uadd.value)){
+			alert("Enter a valid Address!");
+		}
+	}
+</script>
+<div class="base">
+  <nav class="navbar navbar-default">  
+    <div class="container-fluid">  
+      <a class="navbar-brand" href="try2.html"><img src="logo3.png" id="logo"></a>
+       <div class="container" style="width: 100%;">         
+       <ul class="nav navbar-nav navbar-right" id="right">         
+        <li class="active"><a href="#" id="user"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.html" id="user"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>    
+       </ul>     
+       </div>  
+     </div> 
+     </nav>
+
+<nav id="nav" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button"  class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                   
+      </button>
+      </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="try2.html">Home</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rent <span class="caret"></span> </a>
+            <ul class="dropdown-menu"> 
+                <li><a href="twowheel.html">Two-wheeler</a> </li>
+                 <li><a href="fourwheeler.html">four-wheeler</a> </li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="active"><a href="signup.html" id="initial">Sign Up</a></li>
+        <li><a href="login.html" id="initial">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="base">
+<div class="container">
+<div class="col-sm-1"></div>
+  <div class="col-sm-6">
+  <h2 style="color: #ffffff;">Sign Up</h2>
+  <form  action="connection.php" method="post" onsubmit="return check()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="form-group">
+      <label for="name">Email:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="name">Aadhar Card No:</label>
+      <input type="text" class="form-control" id="aadhar" placeholder="Enter Aadhar No" name="aadhar">
+    </div>
+    <div class="form-group">
+      <label for="name">PAN Card No:</label>
+      <input type="text" class="form-control" id="pan" placeholder="Enter PAN No" name="pan">
+    </div>
+    <div class="form-group">
+      <label for="Date">Birthdate:</label>
+      <input type="text" class="form-control" id="bd" placeholder="Enter Birthdate" name="bd">
+    </div>
+    <div class="form-group">
+      <label for="name">Mobile No:</label>
+      <input type="text" class="form-control" id="mobile" placeholder="Enter MobileNo" name="mobile">
+    </div>
+    <div class="form-group">
+      <label for="name">Address:</label>
+      <input type="address" class="form-control" id="addr" placeholder="Enter Address" name="addr">
+    </div>
+    <div class="checkbox">
+      <label style="color: white;"><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>

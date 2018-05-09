@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | Four-Wheelers</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  	<link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+	<div id="app">
+		<v-app id="inspire">
+			<v-content>
+			<v-container fluid fill-height>
+				<v-layout align-center justify-center>
+					<v-flex xs12 sm8 md4>
+						<v-card class="elevation-12">
+							<v-toolbar color="green">
+								<v-toolbar-title class="white--text">Register for 4 Wheelers</v-toolbar-title>
+								<v-spacer></v-spacer>
+								<v-btn icon large><v-icon large color="white">directions_car</v-icon></v-btn>
+								</v-toolbar>
+								<v-card-text>
+									
+			<v-form action="index.php" method="GET">
+				<v-text-field name="model" label="Model Name" type="text" required></v-text-field>
+                  <v-text-field name="model_no" label="Vehicle Number" type="text" required></v-text-field>
+                  <!-- <span class="subheading">Select time:</span><br><br>
+                  <center><v-time-picker v-model="picker" :landscape="landscape" color="green" required></v-time-picker></center><br> -->
+				<v-flex>		
+                  <v-dialog ref="dialog" persistent lazy full-width width="290px" :return-value.sync="time" v-model="model_clock">
+                  	<v-text-field slot="activator" label="Pick time" v-model="time" readonly required></v-text-field>
+                  	<v-time-picker v-model="time" color="green" actions required>
+                  	<v-spacer></v-spacer>
+                  	<v-btn flat color="green" @click='model_clock=false'>Cancel</v-btn>
+                  	<v-btn flat color="green" @click='$refs.dialog.save(time)'>OK</v-btn>
+                  	</v-time-picker>
+                  </v-dialog>
+				</v-flex>
+                  <v-text-field name="amount" type="text" value="100" label="Enter Fare" required></v-text-field><br>
+                  <v-text-field name="address" v-model="address" label="Enter Address" ref="address" required></v-text-field>
+                  <span class="subheading">Upload Image of your vehicle: </span><br><br>
+                  <center><v-btn color="green" class="white--text" required>Upload Image</v-btn></center>
+                  <v-text-field name="login" label="Enter Description" type="text" multi-line required></v-text-field>
+			</v-form>
+		</v-card-text>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn color="green" class="white--text" type="submit" onlclick="hello">Register</v-btn>
+		</v-card-actions>
+		</v-card>
+		</v-flex>
+		</v-layout>
+		</v-container>
+		</v-content>
+		</v-app>
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+ 	<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+	<script>
+	new Vue({
+			  el: '#app',
+			  data: () => ({
+			    drawer: null
+			  }),
+			  data () {
+			  	return {
+			  		time: null,
+			  		model_clock: false,
+			  		address: null
+			  	}
+			  },
+			  props: {
+			    source: String
+			  }
+			})
+	</script>
+	<script type="text/javascript">
+		function hello(){
+		window.alert(document.getElementByName('model').value);
+	}
+	</script>
+</body>
+</html>
