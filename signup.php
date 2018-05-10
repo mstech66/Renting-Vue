@@ -37,12 +37,12 @@ if (isset($_FILES["image"]["name"])) {
 
   if($result)
   {
-    echo "Registation Successfully";
-    // header("refresh:01;url=try2.html");
+    // echo "Registation Successfully";
+    header("refresh:01;url=rent_four.php");
   }
   else
   {
-    echo "Registation Unsuccessfully";
-    // header("refresh:01;url=try2.html");
+    // echo "Registation Unsuccessfully";
+    header("refresh:01;url=rent_four.php");
   }
 ?>
