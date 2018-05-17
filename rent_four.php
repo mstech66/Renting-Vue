@@ -61,7 +61,7 @@ while ( $row =mysqli_fetch_assoc($result) )
 		</v-container>
 		<v-footer height="auto" class="white">
 			<v-flex xs12 py-3 text-xs-center white--text>
-				<a href="index.html" style="text-decoration: none;"><v-btn round color="primary" text-color="white">
+				<a href="signup4.html" style="text-decoration: none;"><v-btn round color="primary" text-color="white">
 					<!-- <v-avatar>
 						<v-icon>keyboard_arrow_left</v-icon>
 					</v-avatar> -->

@@ -1,225 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RentalSystem | Home</title>
-	 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Rental | Home</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes, minimal-ui">
+  <link rel="icon" href="launcher.png">
   <style type="text/css">
-  	#nav{
-  		margin-top: 5px;
-  		background-color: transparent;
-  		border: none;
-  		z-index: 100;
-        } 
-         #logo{
-            top:0px;
-            height: 150px;
-            width: 150px;
-            z-index: 0;
-             }
-        a:hover{
-        	background-color: red;
-        }
-        nav,.navbar,.navbar-default{
-        	background-color: transparent;
-        	border-color: transparent;
-        	padding-bottom:0;
-        	margin-bottom: 0;
-        	z-index: 100;
-        }
-        .navbar-default .navbar-brand{
-          color: #ffffff;
-        }
-        .navbar-default .navbar-nav>li>a{
-          color: #ffffff;
-        }
-        .navbar-default .navbar-nav>.active>a{
-          color: #212121;
-        }
-        #right{
-        	padding-right: 0;
-        	margin-right: 0;
-        }
-        #img{
-        	width: 100%;
-        	position: absolute;
-        	top: 0;
-        	z-index: 0;
-        	background-color: #212121;
-        	height: 350px;
-        	  }
-         #car{
-        	width: 600px;
-        	position: absolute;
-        	top: 200;
-        	z-index: 50;
-        	right: 0;
- }
-        	  .row{
-        	  	width: 100%;
-        	  	margin: 0;
-        	  	padding: 0;
-        	  }
-        	  .row>p{
-        	  	font-size: 30px;
-              z-index: 100;
-              margin: 20;
-        	  }
-        	  .base{
-        	  	position: relative;
-        	  	width: 100%;
-        	  	height: 660px;
-        	  }
-        	  #flow{
-        	  	position: absolute;
-        	    margin-top: 120px;
-        	  	color: white;
-        	  	z-index: 120;
-              	font-size: 40px;
-             	padding-left: 10px;
-        	  }
-            #car2{
-            	height: 450px;
-            	width: 675px;
-            	z-index: 50;
-            }
-            #p1{
-              font-size: 30px;
-              vertical-align: middle;
-              display: inline-block;
-              line-height: normal;
-            }
-            #p2{
-               font-size: 30px;
-              vertical-align: middle;
-              display: inline-block;
-              line-height: normal;
-             margin-top: 200px;
-             color: white;
-}
-            #initial{
-            	display: none;
-            }
-            @media screen and (max-width: 500px){
-            	#user{
-            		display: none;
-            	}
-            	#initial{
-            	display: flex;
-            	}
-            }
-            #img1{
-               width: 100%;
-               position: absolute;
-               z-index: 0;
-              background-color: #212121;
-              height: 400px;
-              margin-top: 150px;
-            }
-            #img3{
-              width: 100%;
-               position: absolute;
-               z-index: 0;
-              background-color: #FF6E40;
-              height: 200px;
-              margin-top: 100px;
-            }
-            #img4{
-               width: 100%;
-               position: absolute;
-               z-index: 0;
-              background-color: transparent;
-              height: 100px;
-              margin-top: 700px;
-            }
-            #vespa{
-                height: 280px;
-                width: 250px;
-               right: 0;
-                margin-top: 80px;
-                border-radius: 50px;
-        }
-            #bike{
-                height: 280px;
-                width: 280px;
-               right: 0;
-                margin-top: 80px;
-                border-radius: 50px;
- }
-           .dropdown-menu{
-            background-color: #FFF59D; 
-           }
-   </style>
+    @font-face{
+      font-family: ProductSans;
+      src:url(ProductSans.ttf);
+    }
+    .para{
+      font-family: ProductSans;
+    }
+  </style>
 </head>
 <body>
-<div class="base">
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-     <a class="navbar-brand" href="try2.html"><img src="logo3.png" id="logo"></a>
-		<div class="container" style="width: 100%;">
-			  <ul class="nav navbar-nav navbar-right" id="right">
-        <li><a href="signup.html" id="user"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.html" id="user"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-		</div>
-	</div>
-</nav>
-<nav id="nav" class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button"  class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                   
-      </button>
-     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home</a></li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Rent <span class="caret"></span> </a>
-            <ul class="dropdown-menu"> 
-                <li><a href="twowheel.html">Two-wheeler</a> </li>
-                 <li><a href="fourwheeler.html">four-wheeler</a> </li>
-            </ul>
-</li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="signup.html" id="initial">Sign Up</a></li>
-        <li><a href="login.html" id="initial">Log In</a></li>
-      </ul>
-    
-      </div>
+  <div id="app">
+    <v-app>
+      <v-content style="background-color: white;">
+<!--         <v-container> -->
+          <v-toolbar dark>
+            <v-toolbar-icon><img src="launcher.png" width="48" height="48"></v-toolbar-icon>
+            <v-toolbar-title class="headline">Rental</v-toolbar-title>
+          
+<!--         </v-container> -->
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+          <v-btn flat @click="signup()">Sign Up</v-btn>
+          <v-btn flat @click="login()">LogIn</v-btn>
+          <v-menu offset-y>
+            <v-btn slot="activator" flat>
+          <span>Rent</span>
+          <v-icon light>arrow_drop_down</v-icon>
+        </v-btn>
+            <v-list>
+              <v-list-tile v-for="item in items" :key="item" @click="goToWheelers(item)">
+                <v-list-tile-title v-text="item"></v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+          <v-btn flat @click="contact()">Contact</v-btn>
+          <v-btn flat @click="about()">About</v-btn>
+        </v-toolbar-items>
+        </v-toolbar>
+<!--         <v-container fluid> -->
+          <v-layout row wrap style="height: 325px;background-color: black;">
+            <v-flex xs6>
+              <p class="display-1 white--text pt-5 pl-5 mt-5 para">Book a Car or Bike to your destination</p>
+              <p class="display-1 white--text pl-5 para">Reliable | Smart | Easy</p>
+            </v-flex>
+            <v-flex xs6>
+              <img src="car1.png" style="text-align: right;width: 600px;" class="pt-3">
+            </v-flex>
+          </v-layout>
+<!--         </v-container> -->
+          <v-layout row wrap class="my-5" style="background-color: white;">
+            <v-flex xs6>
+              <img src="renting.png" style="text-align: left;" class="pt-5 pl-5">
+            </v-flex>
+            <v-flex xs6 style="text-align: right;padding-top: 150px;">
+             <p class="headline black--text pr-5 pt-5 para">We make sure that every car is pollution free</p>
+             <p class="headline black--text pr-5 para">So with car renting, environment doesn't get affected</p>
+             <v-icon color="green" class="pr-5">local_florist</v-icon>
+             <v-icon color="yellow" class="pr-5">wb_sunny</v-icon>
+             <v-icon color="pink" class="pr-5">filter_vintage</v-icon>
+            </v-flex>
+          </v-layout>
+          <!-- <v-layout row wrap class="pt-5" style="background-color: black;">
+            <v-flex xs12 style="text-align: center;">
+              <p class="headline white--text" align-center>Why only Cars? Let's Rent Bikes, too</p>
+            </v-flex>
+          </v-layout> -->
+          <!-- <v-layout row wrap class="mb-3" style="background-color: black;">
+            <v-flex xs4>
+              <img src="left.png" class="pt-5 pl-0">
+            </v-flex>
+            <v-flex xs4>
+              <img src="activa.png" style="text-align: center;" class="pt-5">
+            </v-flex>
+            <v-flex xs4>
+              <img src="right.png" class="pt-5 pr-0">
+            </v-flex>
+          </v-layout> -->
+          <v-layout row wrap class="mt-5 mb-3 pb-5" style="background-image: url(background.jpg); height: 740px; width: 1360px; background-repeat: no-repeat; background-size: cover;">
+            <v-flex xs6>
+            </v-flex>
+            <v-flex xs6 style="text-align: center;">
+              <p class="headline white--text pr-5 mt-5 pt-5" style="font-family: ProductSans;">Rental&copy; | Local Renting Solutions Simplified</p>
+              <p class="headline white--text pr-5" style="font-family: ProductSans;">Providing Renting Solutions Where Uber and OLA can't reach</p><br>
+              <p class="headline white--text pr-5" style="font-family: ProductSans;">We will be launching our App soon <v-icon color="red">favorite</v-icon> </p>
+              <p class="headline white--text pr-5" style="font-family: ProductSans;">Please type your email to stay tuned!</p>
+              <center><v-text-field name="email" label="Type your Email" style="width: 400px;" prepend-icon="mail" class="white--text pr-5" dark></v-text-field>
+              </center>
+              <center><v-btn flat @click="mailTo(email)" color="white" class="mr-5">SUBSCRIBE</v-btn></center>
+            </v-flex>
+          </v-layout>
+      </v-content>
+      <v-footer height="auto" class="grey darken-3 pt-4 mt-0">
+          <v-layout row wrap justify-center>
+            <v-btn v-for="link in links" :key="link" color="white" flat @click="linkOpen(link)">
+              {{ link }}
+            </v-btn>
+            <v-flex xs12 py-3 text-xs-center white--text para subheading>&copy; 2018 - Rental | Hello from Unjha</v-flex>
+          </v-layout>
+        </v-footer>
+    </v-app>
   </div>
-</nav>
-<!-- <img src="car.jpg" id="img"> -->
-<div id="img"></div>
-<img src="car1.png" id="car">
-<p id="flow">Rent Anything, Anytime, Anyplace.</br>Reliable | Easy | Smart.</p>
-
-</div>
-<div class="row">
-<div id="img3"></div>
-<div class="col-sm-6" style="padding-left: 0px;">
-<img src="app.gif" id="car2">
-</div>
-<div class="col-sm-6" style="height: 400px;line-height: 400px;">
-<p id="p1">Changing Renting with our services.
-Reliable and Easy service.</p>
-</div>
-</div>
-<div id="img1">
-  <img src="blue-bike.png" id="vespa">
-  <img src="bike.png" id="bike">
-   <div class="col-sm-6"> 
-<p id="p2">Not only car...Now you can take all Vehicle on Rent :)</p>
-</div>
-</div>
-<!-- footer -->
-<div id="img4">
-  <img src="footer_waves.png" height="100%" width="100%">
-</div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue({ el: '#app',
+              data : ()=>({
+                items : ['Two-Wheelers','Four-Wheelers'],
+                links : ['Home','Sign Up','LogIn','Rent','About','Contact']
+              }),
+              methods: {
+                goToWheelers : function(item){
+                  if(item=='Two-Wheelers'){
+                  window.location.href="signup2.html";
+                }
+                else if(item=='Four-Wheelers'){
+                  window.location.href="signup4.html";
+                }
+              },
+              about(){
+                window.location.href="about.html";
+              },
+              contact(){
+                window.location.href="contact.html";
+              },
+              signup(){
+                window.location.href="signup.html";
+              },
+              login(){
+                window.location.href="login.html";
+              },
+              linkOpen : function(link){
+                window.location.href=link+".html";
+              },
+              mailTo : function(email){
+                window.location.href="mailto:manthanmevada66@gmail.com";
+              }
+              }
+     })
+  </script>
 </body>
 </html>
