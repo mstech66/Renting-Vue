@@ -21,13 +21,13 @@
 								</v-toolbar>
 								<v-card-text>
 									
-			<v-form enctype="multipart/form-data" method="post" v-model="valid" id="form" @submit="submit" action="signup.php" lazy-validation>
+			<v-form enctype="multipart/form-data" method="post" v-model="valid" id="form" @submit="submit" action="signup4.php" lazy-validation>
 				<v-text-field name="model" label="Model Name" type="text" v-model="model" required></v-text-field>
                   <v-text-field name="no" label="Vehicle Number" type="text" v-model="no" required></v-text-field>
                   <!-- <span class="subheading">Select time:</span><br><br>
                   <center><v-time-picker v-model="picker" :landscape="landscape" color="green" required></v-time-picker></center><br> -->
                   <v-flex>
-                  <v-dialog ref="dialog1" persistent lazy full-width width="290px" v-model="model1" :return-value.sync="time">
+                  <v-dialog ref="dialog1" persistent lazy full-width width="290px" v-model="model1" :return-value.sync="time" @keydown.esc="model1 = false">
                   	<v-text-field slot="activator" label="Pickup Time" name="time1" v-model="time1" readonly required></v-text-field>
                   	<v-time-picker v-model="time1" color="green" actions>
                    		<v-spacer></v-spacer>
@@ -37,7 +37,7 @@
                   </v-dialog>
               </v-flex>
                <v-flex>
-                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time">
+                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time" @keydown.esc="model1 = false">
                   	<v-text-field slot="activator" label="Drop Time" v-model="time2" name="time2" readonly required></v-text-field>
                   	<v-time-picker v-model="time2" color="green" actions>
                    		<v-spacer></v-spacer>

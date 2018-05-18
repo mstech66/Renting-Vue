@@ -17,7 +17,7 @@
 							<v-toolbar color="green">
 								<v-toolbar-title class="white--text">Register for 2 Wheelers</v-toolbar-title>
 								<v-spacer></v-spacer>
-								<v-btn icon large @click="showCars()"><v-icon large color="white">directions_bike</v-icon></v-btn>
+								<v-btn icon large @click="showBikes()"><v-icon large color="white">directions_bike</v-icon></v-btn>
 								</v-toolbar>
 								<v-card-text>
 									
@@ -27,7 +27,7 @@
                   <!-- <span class="subheading">Select time:</span><br><br>
                   <center><v-time-picker v-model="picker" :landscape="landscape" color="green" required></v-time-picker></center><br> -->
                   <v-flex>
-                  <v-dialog ref="dialog1" persistent lazy full-width width="290px" v-model="model1" :return-value.sync="time">
+                  <v-dialog ref="dialog1" persistent lazy full-width width="290px" v-model="model1" :return-value.sync="time" @keydown.esc="model1 = false">
                   	<v-text-field slot="activator" label="Pickup Time" name="time1" v-model="time1" readonly required></v-text-field>
                   	<v-time-picker v-model="time1" color="green" actions>
                    		<v-spacer></v-spacer>
@@ -37,7 +37,7 @@
                   </v-dialog>
               </v-flex>
                <v-flex>
-                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time">
+                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time" @keydown.esc="model2 = false">
                   	<v-text-field slot="activator" label="Drop Time" v-model="time2" name="time2" readonly required></v-text-field>
                   	<v-time-picker v-model="time2" color="green" actions>
                    		<v-spacer></v-spacer>
@@ -121,7 +121,7 @@
 			  	submit(){
 			  		form.submit()
 			  	},
-			  	showCars(){
+			  	showBikes(){
 			  		window.location.href="rent_two.php";
 			  	}
 			  }
