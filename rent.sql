@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2018 at 04:06 AM
+-- Generation Time: May 20, 2018 at 01:13 PM
 -- Server version: 5.1.36
 -- PHP Version: 5.3.0
 
@@ -81,3 +81,27 @@ INSERT INTO `registertwo` (`model`, `no`, `time1`, `time2`, `fare`, `address`, `
 ('Activa 4G', 'GJ47A4746', '11:00', '01:00', 300, 'Unjha', 'Good condition. Ready to be Rented Activa', 'blue-bike.png'),
 ('Splender', 'GJ10B1080', '11:30', '13:30', 250, 'Unjha', 'Good condition and ready to honk', 'honda_2.png'),
 ('Pulsar', 'GJ08A1080', '10:01', '11:00', 100, 'Mehsana', 'Good condition and Better Mileage.', 'pulsar.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signup`
+--
+
+CREATE TABLE IF NOT EXISTS `signup` (
+  `name` varchar(15) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `aadhar` varchar(12) NOT NULL,
+  `pan` varchar(10) NOT NULL,
+  `bdate` varchar(10) NOT NULL,
+  `no` varchar(10) NOT NULL,
+  `address` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `signup`
+--
+
+INSERT INTO `signup` (`name`, `password`, `email`, `aadhar`, `pan`, `bdate`, `no`, `address`) VALUES
+('Manthan Mevada', 'manthan123', 'manthanmevada66@gmail.com', '123456789012', '1234567890', '1998-06-30', '8153965844', 'Ugamni Sheri, Sutharvas, Jagana');

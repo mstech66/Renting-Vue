@@ -1,166 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RentalSystem | Home</title>
-   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Rental | About</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="icon" href="launcher.png">
   <style type="text/css">
-    #nav{
-      margin-top: 5px;
-      background-color: transparent;
-      border: none;
-      z-index: 100;
-        } 
-         #logo{
-            top:0px;
-            height: 150px;
-            width: 150px;
-            z-index: 0;
-             }
-        a:hover{
-          background-color: red;
-        }
-        nav,.navbar,.navbar-default{
-          background-color: transparent;
-          border-color: transparent;
-          padding-bottom:0;
-          margin-bottom: 0;
-          z-index: 100;
-        }
-        .navbar-default .navbar-brand{
-          color: #ffffff;
-        }
-        .navbar-default .navbar-nav>li>a{
-          color: #ffffff;
-        }
-        .navbar-default .navbar-nav>.active>a{
-          color: #212121;
-        }
-        #right{
-          padding-right: 0;
-          margin-right: 0;
-        }
-        #img{
-          width: 100%;
-          position: absolute;
-          top: 0;
-          z-index: 0;
-          background-color: #212121;
-          height: 1000px;
-            }
-         #car{
-          width: 600px;
-          position: absolute;
-          top: 200;
-          z-index: 50;
-          right: 0;
-
-            }
-            .row{
-              width: 100%;
-              margin: 0;
-              padding: 0;
-            }
-            .row>p{
-              font-size: 30px;
-              z-index: 100;
-              margin: 20;
-            }
-            .base{
-              position: relative;
-              width: 100%;
-              height: 660px;
-            }
-           
-            #initial{
-              display: none;
-            }
-            @media screen and (max-width: 500px){
-              #user{
-                display: none;
-              }
-              #initial{
-              display: flex;
-              }
-            }
-           
-           
-   </style>
+    @font-face{
+      font-family: ProductSans;
+      src:url(ProductSans.ttf);
+    }
+    .para{
+      font-family: ProductSans;
+    }
+    .c1{
+      color: yellow;
+    }
+  </style>
 </head>
 <body>
-<div class="base">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-     <a class="navbar-brand" href="try2.html"><img src="logo3.png" id="logo"></a>
-    <div class="container" style="width: 100%;">
-        <ul class="nav navbar-nav navbar-right" id="right">
-        <li><a href="signup.html" id="user"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.html" id="user"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
+  <div id="app">
+    <v-app fluid>
+      <v-content style="background-color: white;">
+<!--         <v-container> -->
+          <v-toolbar dark color="black">
+            <v-toolbar-icon><img src="launcher1.png" width="50" height="50"></v-toolbar-icon>
+            <v-toolbar-title class="headline">Rental</v-toolbar-title>
+          
+<!--         </v-container> -->
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+          <v-btn flat @click="signup()">Sign Up</v-btn>
+          <v-btn flat @click="login()">LogIn</v-btn>
+          <v-menu offset-y>
+            <v-btn slot="activator" flat>
+          <span>Rent</span>
+          <v-icon light>arrow_drop_down</v-icon>
+        </v-btn>
+            <v-list>
+              <v-list-tile v-for="item in items" :key="item" @click="goToWheelers(item)">
+                <v-list-tile-title v-text="item"></v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+          <v-btn flat @click="contact()">Contact</v-btn>
+          <v-btn flat @click="about()">About</v-btn>
+        </v-toolbar-items>
+        </v-toolbar>
+<!--         <v-container fluid> -->
+          <v-layout row wrap style="background-color: black;height: 100%">
+            <v-flex xs12 style="text-align: center;">
+              <p class="headline para white--text pt-5">About Us</p>
+              <p class="title para white--text">"Providing better Vehicle Renting Solutions Where <span class="c1">Uber</span> and <span class="c1">OLA</span> can't Reach"</p>
+              <p class="title para white--text">The main reason to build up Rental is to provide people locally the best and easy way to rent vehicles.</p>
+              <p class="title para white--text">Sometimes people need just one vehicle for hanging out with friends or go for a long drive with family.</p>
+              <p class="title para white--text">In big cities, <span class="c1">Uber</span> and <span class="c1">OLA</span> does the Job, but what for the others?</p>
+              <p class="title para white--text">So, we thought it would be lot cooler if we make something that benefits people locally.</p>
+              <p class="title para white--text">And so, We made <span class="c1">Rental&copy;</span></p>
+              <p class="title para white--text">We are developing our app soon. So stay tuned!</p>
+            </v-flex>
+          </v-layout>
+<!--         </v-container> -->
+          
+      </v-content>
+      <v-footer height="auto" class="grey darken-3 pt-4 mt-0">
+          <v-layout row wrap justify-center>
+            <v-btn v-for="link in links" :key="link" color="white" flat @click="linkOpen(link)">
+              {{ link }}
+            </v-btn>
+            <v-flex xs12 py-3 text-xs-center white--text para subheading>&copy; 2018 - Rental | Hello from Unjha</v-flex>
+          </v-layout>
+        </v-footer>
+    </v-app>
   </div>
-</nav>
-
-<nav id="nav" class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button"  class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                   
-      </button>
-     
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li ><a href="#">Home</a></li>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <span class="caret"></span> </a>
-            <ul class="dropdown-menu"> 
-                <li><a href="twowheel.html">Two-wheeler</a> </li>
-                 <li><a href="fourwheeler.html">four-wheeler</a> </li>
-            </ul>
-
-
-        </li>
-
-
-
-        <li ><a href="contact.html">Contact</a></li>
-        <li class="active"><a href="about.html">About</a></li>
-        <li><a href="signup.html" id="initial">Sign Up</a></li>
-        <li><a href="login.html" id="initial">Log In</a></li>
-      </ul>
-    
-      </div>
-  </div>
-</nav>
-<img src="car.jpg" id="img">
-<div id="img"></div>
-<div class="row" style="margin-top: 110px;">
-  <div class="col-sm-12" style="text-align: center;font-size: 40px;color: white;"><u>Our Story</u></div>
-</div>
-<div class="row" style="margin-top: 60px;">
-  <div class="col-sm-2">&nbsp</div>
-  <div class="col-sm-8"><p style="font-size: 20px;color: white;">This is a sample about us which shows our mission that can be formulated in this statement. The statement which shows the best out of everyone which is a sample statement....</p></div>
-  <div class="col-sm-2">&nbsp</div>
-</div>
-<div class="row">
-  <div class="col-sm-12"><p style="color: white;font-size: 30px;text-align: center;margin-top: 100px;"><u>Rental System</u></p></div>
-</div>
-<div class="row">
-  <div class="col-sm-4">&nbsp</div>
-  <div class="col-sm-4" style="text-align: center;color: white;font-size: 15px;"><p>13, Washington Street, New Lexington</p><p>Near Strange Park, 64th Street, Tennesse</p><p></p></div>
-  <div class="col-sm-4">&nbsp</div>
-</div>
-
-
-<!-- footer -->
-<div id="img4">
-  <img src="footer_waves.png" height="100%" width="100%">
-</div> -->
-
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue({ el: '#app',
+              data : ()=>({
+                items : ['Two-Wheelers','Four-Wheelers'],
+                links : ['home','signup','login','about','contact']
+              }),
+              methods: {
+                goToWheelers : function(item){
+                  if(item=='Two-Wheelers'){
+                  window.location.href="signup2.html";
+                }
+                else if(item=='Four-Wheelers'){
+                  window.location.href="signup4.html";
+                }
+              },
+              about(){
+                window.location.href="about.html";
+              },
+              contact(){
+                window.location.href="contact.html";
+              },
+              signup(){
+                window.location.href="signup.html";
+              },
+              login(){
+                window.location.href="login.html";
+              },
+              linkOpen : function(link){
+                if(link=="home"){
+                  window.location.href="index.html";
+                }
+                else{
+                  window.location.href=link+".html";
+                }
+              },
+              mailTo : function(email){
+                window.location.href="mailto:manthanmevada66@gmail.com";
+              }
+              }
+     })
+  </script>
 </body>
 </html>

@@ -21,8 +21,8 @@
     <v-app fluid>
       <v-content style="background-color: white;">
 <!--         <v-container> -->
-          <v-toolbar dark>
-            <v-toolbar-icon><img src="launcher.png" width="48" height="48"></v-toolbar-icon>
+          <v-toolbar dark color="black">
+            <v-toolbar-icon><img src="launcher1.png" width="50" height="50"></v-toolbar-icon>
             <v-toolbar-title class="headline">Rental</v-toolbar-title>
           
 <!--         </v-container> -->
@@ -54,18 +54,23 @@
             <v-flex xs6>
               <img src="car1.png" style="text-align: right;width: 100%;" class="pt-3">
             </v-flex>
-          </v-layout>
+          </v-layout><br><br><br><br>
 <!--         </v-container> -->
-          <v-layout row wrap class="my-5" style="background-color: white;">
-            <v-flex xs6 md6>
-              <img src="renting.png" style="text-align: left;width: 100%;background-size: cover;" class="pt-5 pl-5">
+          
+          <v-layout row wrap mt-5 pt-5>
+            <v-flex xs4>
+              <video id="video" autoplay="true" loop="loop" muted preload="auto"><source src="2wheel.mp4" type="video/mp4">Sorry Browser Not Supported!</video>
             </v-flex>
-            <v-flex xs6 md6 style="text-align: right;padding-top: 150px;">
-             <p class="headline black--text pr-5 pt-5 para">We make sure that every car is pollution free</p>
-             <p class="headline black--text pr-5 para">So with car renting, environment doesn't get affected</p>
-             <v-icon color="green" class="pr-5">local_florist</v-icon>
-             <v-icon color="yellow" class="pr-5">wb_sunny</v-icon>
-             <v-icon color="pink" class="pr-5">filter_vintage</v-icon>
+            <v-flex xs4 pt-5 mt-5 style="text-align: center;">
+              <p class="display-1 para green--text">Easy to Use</p>
+              <p class="headline para green--text">To See Which Vehicles are Up for Rent</p>
+              <p class="headline para green--text">Just press these Icons</p>
+              <img src="bike.png" height="70px" width="70px">&nbsp&nbsp<img src="car.png" height="70px" width="70px">
+              <p class="headline para green--text">To begin Go to Rent Menu Up there</p>
+              <!-- <video id="video" autoplay="true" loop="loop" muted preload="auto"><source src="gif.mp4" type="video/mp4">Sorry Browser Not Supported!</video> -->
+            </v-flex>
+            <v-flex xs4 style="text-align: right;">
+              <video id="video" autoplay="true" loop="loop" muted preload="auto"><source src="4wheel.mp4" type="video/mp4">Sorry Browser Not Supported!</video>
             </v-flex>
           </v-layout>
           <v-layout row wrap class="mt-5 mb-3 pb-5" style="background-image: url(background.jpg); height: 740px; width: 100%; background-repeat: no-repeat; background-size: cover;">
@@ -79,6 +84,19 @@
               <center><v-text-field name="email" label="Type your Email" style="width: 400px;" prepend-icon="mail" class="white--text pr-5" dark></v-text-field>
               </center>
               <center><v-btn flat @click="mailTo(email)" color="white" class="mr-5">SUBSCRIBE</v-btn></center>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap class="my-5" style="background-color: white;">
+            <v-flex xs6 md6>
+              <img src="renting.png" style="text-align: left;width: 100%;background-size: cover;" class="pt-5 pl-5">
+            </v-flex>
+            <v-flex xs6 md6 style="text-align: right;padding-top: 100px;">
+             <p class="display-1 black--text pr-5 pt-5 para">Pollution Free Vehicles</p>
+             <p class="headline black--text pr-5 para">We make sure that every car is pollution free</p>
+             <p class="headline black--text pr-5 para">So with car renting, environment doesn't get affected</p>
+             <v-icon color="green" class="pr-5">local_florist</v-icon>
+             <v-icon color="yellow" class="pr-5">wb_sunny</v-icon>
+             <v-icon color="pink" class="pr-5">filter_vintage</v-icon>
             </v-flex>
           </v-layout>
       </v-content>
@@ -98,7 +116,7 @@
     new Vue({ el: '#app',
               data : ()=>({
                 items : ['Two-Wheelers','Four-Wheelers'],
-                links : ['Home','Sign Up','LogIn','Rent','About','Contact']
+                links : ['home','signup','login','about','contact']
               }),
               methods: {
                 goToWheelers : function(item){
@@ -122,8 +140,11 @@
                 window.location.href="login.html";
               },
               linkOpen : function(link){
-                if(link=="Home"){
+                if(link=="home"){
                   window.location.href="index.html";
+                }
+                else if(link=="rent"){
+                  
                 }
                 else{
                   window.location.href=link+".html";

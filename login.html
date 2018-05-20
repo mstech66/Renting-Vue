@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In | Rental</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  	<link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  	<link rel="icon" href="launcher.png">
+</head>
+<body>
+	<div id="app">
+		<v-app id="inspire">
+			<v-content>
+			<v-container fluid fill-height>
+				<v-layout column align-center justify-center>
+					<v-flex xs12 sm8 md4>
+						<v-card class="elevation-12" width="400">
+							<v-toolbar color="orange">
+								<v-toolbar-title class="white--text">Log In</v-toolbar-title>
+								<v-spacer></v-spacer>
+								<v-btn icon large><v-icon large color="white">how_to_reg</v-icon></v-btn>
+								</v-toolbar>
+								<v-card-text>
+									
+			<v-form enctype="multipart/form-data" method="post" v-model="valid" id="form" @submit="submit" action="login.php" lazy-validation>
+				<v-text-field name="email" label="Enter Email" type="text" v-model="email" :rules="emailRules" required></v-text-field>
+				<v-text-field name="password" label="Enter Password" type="password" v-model="password" min="10" required></v-text-field>
+		</v-card-text>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn class="blue--text" @click="signup" flat>Forgot Signing Up?</v-btn>
+			<v-btn class="orange--text" :disabled="!valid" @click="submit" flat>Log In</v-btn>
+		</v-card-actions>
+		</v-form>
+		</v-card>
+		</v-flex>
+		</v-layout>
+		</v-container>
+		</v-content>
+		</v-app>
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+ 	<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+	<script>
+	new Vue({
+			  el: '#app',
+			  data: () => ({
+			    drawer: null,
+			    valid: false,
+			    name:'',
+			    email:'',
+			    nameRules:  [
+			        v => !!v || 'Name is required',
+			        v => v.length <= 10 || 'Name must be less than 10 characters'
+			      ],
+			    emailRules:  [
+			        v => !!v || 'E-mail is required',
+			        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+			      ]
+			  }),
+			  data(){
+			  	return{
+			  		valid:false,
+			  		email:null,
+			  		password:null
+			  	}
+			  },
+			  props: {
+			    source: String
+			  },
+			  methods: {
+			  	submit(){
+			  		form.submit()
+			  	},
+			  	signup(){
+			  		window.location.href="signup.html";
+			  	}
+			  }
+			})
+	</script>
+</body>
+</html>

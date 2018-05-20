@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up | Rental</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  	<link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  	<link rel="icon" href="launcher.png">
+</head>
+<body>
+	<div id="app">
+		<v-app id="inspire">
+			<v-content>
+			<v-container fluid fill-height>
+				<v-layout align-center justify-center>
+					<v-flex xs12 sm8 md4>
+						<v-card class="elevation-12">
+							<v-toolbar color="blue">
+								<v-toolbar-title class="white--text">Sign Up</v-toolbar-title>
+								<v-spacer></v-spacer>
+								<v-btn icon large><v-icon large color="white">account_circle</v-icon></v-btn>
+								</v-toolbar>
+								<v-card-text>
+									
+			<v-form enctype="multipart/form-data" method="post" v-model="valid" id="form" @submit="submit" action="signup.php" lazy-validation>
+				<v-text-field name="name" label="Enter Name" type="text" v-model="name" :rules="nameRules" required></v-text-field>
+				<v-text-field name="password" label="Enter Password" type="password" v-model="password" min="10" required></v-text-field>
+				<v-text-field name="email" label="Enter Email" type="text" v-model="email" :rules="emailRules" required></v-text-field>
+				<v-text-field name="aadhar" label="Enter Aadhar No" type="text" v-model="aadhar" min="12" required></v-text-field>
+				<v-text-field name="pan" type="text" label="Enter PAN No" v-model="pan" min="10" required></v-text-field>
+				<v-dialog ref="dialog" v-model="modal" :return-value.sync="bdate" persistent lazy full-width width="290px" @keydown.esc="modal = false">
+					<v-text-field slot="activator" name="bdate" v-model="bdate" label="Enter Birthdate" required></v-text-field>
+					<v-date-picker v-model="bdate" scrollable>
+						<v-spacer></v-spacer>
+						<v-btn flat @click="modal=false">Cancel</v-btn>
+						<v-btn flat @click="$refs.dialog.save(bdate)">OK</v-btn>
+					</v-date-picker>
+				</v-dialog>
+				<v-text-field name="no" label="Enter Mobile No" type="text" v-model="no" min="10" required></v-text-field>
+				<v-text-field name="address" label="Enter Address" type="text" v-model="address" multi-line required></v-text-field>
+				<v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree the User agreement?" required>
+				</v-checkbox>
+		</v-card-text>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-btn class="orange--text" @click="login" flat>Already signed up?</v-btn>
+			<v-btn class="blue--text" :disabled="!valid" @click="submit" flat>Sign Up</v-btn>
+		</v-card-actions>
+		</v-form>
+		</v-card>
+		</v-flex>
+		</v-layout>
+		</v-container>
+		</v-content>
+		</v-app>
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+ 	<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+	<script>
+	new Vue({
+			  el: '#app',
+			  data: () => ({
+			    drawer: null,
+			    valid: false,
+			    name:'',
+			    email:'',
+			    nameRules:  [
+			        v => !!v || 'Name is required',
+			        v => v.length <= 10 || 'Name must be less than 10 characters'
+			      ],
+			    emailRules:  [
+			        v => !!v || 'E-mail is required',
+			        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+			      ]
+			  }),
+			  data(){
+			  	return{
+			  		valid:false,
+			  		model:null,
+			  		no:null,
+			  		name:null,
+			  		email:null,
+			  		password:null,
+			  		address:null,
+			  		aadhar:null,
+			  		pan:null,
+			  		bdate:null,
+			  		modal:false
+			  	}
+			  },
+			  props: {
+			    source: String
+			  },
+			  methods: {
+			  	submit(){
+			  		form.submit()
+			  	},
+			  	login(){
+			  		window.location.href="login.html";
+			  	}
+			  }
+			})
+	</script>
+</body>
+</html>
