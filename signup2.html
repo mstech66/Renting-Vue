@@ -5,6 +5,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   	<link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
   	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  	<link rel="icon" href="launcher.png">
 </head>
 <body>
 	<div id="app">
@@ -48,6 +49,7 @@
               </v-flex>
                   <v-text-field name="fare" type="text" value="100" label="Enter Fare" v-model="fare" required></v-text-field><br>
                   <v-text-field name="address" v-model="address" label="Enter Address" ref="address" required></v-text-field>
+                  <v-text-field name="mobile" v-model="mobile" label="Enter Mobile No" ref="mobile" min="10" required></v-text-field>
                   <center><img :src="imageUrl" height="150" v-if="imageUrl"/></center>
                   <center><v-btn color="green" class="white--text" v-model="image" @click="pickFile" required>Upload Image</v-btn></center>
                   <input type="file" name="image" style="display: none;" ref="image" accept="image/*" @change="onFilePicked">
@@ -55,7 +57,9 @@
 		</v-card-text>
 		<v-card-actions>
 			<v-spacer></v-spacer>
-			<v-btn color="green" class="white--text" @click="submit" :disabled="!valid">Register</v-btn>
+			<v-btn flat color="green" @click="backHome">Back to HomePage&nbsp<v-icon>home</v-icon>?</v-btn>
+			<v-btn flat color="green" @click="goToCars">Sign Up for&nbsp<v-icon>directions_car</v-icon>?</v-btn>
+			<v-btn flat color="green" @click="submit" :disabled="!valid">Sign Up</v-btn>
 		</v-card-actions>
 		</v-form>
 		</v-card>
@@ -88,7 +92,8 @@
 			  		descr:null,
 			  		model1:false,
 			  		model2:false,
-			  		image:null
+			  		image:null,
+			  		mobile:null
 			  	}
 			  },
 			  props: {
@@ -123,6 +128,12 @@
 			  	},
 			  	showBikes(){
 			  		window.location.href="rent_two.php";
+			  	},
+			  	goToCars(){
+			  		window.location.href="signup4.html";
+			  	},
+			  	backHome(){
+			  		window.location.href="index.html";
 			  	}
 			  }
 			})

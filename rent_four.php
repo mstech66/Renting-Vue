@@ -39,7 +39,7 @@ $result= mysqli_query($conn,$sql);
 while ( $row =mysqli_fetch_assoc($result) )
 {
 		?>	
-			<v-card class="ml-3 mt-5 mr-3" width="300px">
+			<v-card class="ml-3 mt-5 mr-3" width="400px">
 				<v-card-media :src="`uploads/<?php echo $row['image']; ?>`" width="250px" height="200px"><!-- Pass name here instead of 4.png and `` signs should be as it is-->
 				</v-card-media>
 				<v-card-title primary-title>
@@ -49,9 +49,9 @@ while ( $row =mysqli_fetch_assoc($result) )
 					</div>
 				</v-card-title>
 				<v-card-actions>
-					<v-btn flat color="primary">From: <?php echo $row['time1']; ?></v-btn>
-					<v-btn flat color="primary">To: <?php echo $row['time2']; ?></v-btn>
-					<v-btn flat color="primary">Fare: <?php echo $row['fare']; ?></v-btn>
+					<v-btn flat color="primary"><v-icon>access_time</v-icon>&nbsp<?php echo $row['time1']; ?> To <?php echo $row['time2']; ?></v-btn>
+					<v-btn flat color="primary"><v-icon>attach_money</v-icon>&nbsp<?php echo $row['fare']; ?></v-btn>
+					<v-btn flat color="primary"><v-icon>call</v-icon>&nbsp<?php echo $row['mobile']?></v-btn>
 				</v-card-actions>
 			</v-card>
 						<?php

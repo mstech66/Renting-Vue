@@ -37,7 +37,7 @@
                   </v-dialog>
               </v-flex>
                <v-flex>
-                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time" @keydown.esc="model1 = false">
+                  <v-dialog ref="dialog2" persistent lazy full-width width="290px" v-model="model2" :return-value.sync="time" @keydown.esc="model2 = false">
                   	<v-text-field slot="activator" label="Drop Time" v-model="time2" name="time2" readonly required></v-text-field>
                   	<v-time-picker v-model="time2" color="green" actions>
                    		<v-spacer></v-spacer>
@@ -48,6 +48,7 @@
               </v-flex>
                   <v-text-field name="fare" type="text" value="100" label="Enter Fare" v-model="fare" required></v-text-field><br>
                   <v-text-field name="address" v-model="address" label="Enter Address" ref="address" required></v-text-field>
+                  <v-text-field name="mobile" v-model="mobile" label="Enter Mobile No" ref="mobile" min="10" required></v-text-field>
                   <center><img :src="imageUrl" height="150" v-if="imageUrl"/></center>
                   <center><v-btn color="green" class="white--text" v-model="image" @click="pickFile" required>Upload Image</v-btn></center>
                   <input type="file" name="image" style="display: none;" ref="image" accept="image/*" @change="onFilePicked">
@@ -55,7 +56,9 @@
 		</v-card-text>
 		<v-card-actions>
 			<v-spacer></v-spacer>
-			<v-btn color="green" class="white--text" @click="submit" :disabled="!valid">Register</v-btn>
+			<v-btn flat color="green" @click="backHome">Back to HomePage&nbsp<v-icon>home</v-icon>?</v-btn>
+			<v-btn flat color="green" @click="goToBikes">Sign Up for &nbsp<v-icon>directions_bike</v-icon>?</v-btn>
+			<v-btn flat color="green" @click="submit" :disabled="!valid">Sign Up</v-btn>
 		</v-card-actions>
 		</v-form>
 		</v-card>
@@ -88,7 +91,8 @@
 			  		descr:null,
 			  		model1:false,
 			  		model2:false,
-			  		image:null
+			  		image:null,
+			  		mobile:null
 			  	}
 			  },
 			  props: {
@@ -123,6 +127,12 @@
 			  	},
 			  	showCars(){
 			  		window.location.href="rent_four.php";
+			  	},
+			  	goToBikes(){
+			  		window.location.href="signup2.html";
+			  	},
+			  	backHome(){
+			  		window.location.href="index.html";
 			  	}
 			  }
 			})

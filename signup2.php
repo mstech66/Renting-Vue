@@ -11,6 +11,7 @@ $time1=$_POST['time1'];
 $time2=$_POST['time2'];
 $fare=$_POST['fare'];
 $address=$_POST['address'];
+$mobile=$_POST['mobile'];
 $descr=$_POST['descr'];
 $image=$_FILES['image'];
 if (isset($_FILES["image"]["name"])) {
@@ -27,7 +28,7 @@ if (isset($_FILES["image"]["name"])) {
         echo 'please choose a file';
     }
 }
-    $sql = mysqli_query($conn, "INSERT INTO `registertwo` (`model`,`no`,`time1`, `time2`, `fare`, `address`, `image`, `descr`) VALUES ('$model','$no','$time1', '$time2', '$fare', '$address', '$name', '$descr')") or die(mysqli_error());
+    $sql = mysqli_query($conn, "INSERT INTO `registertwo` (`model`,`no`,`time1`, `time2`, `fare`, `address`, `mobile`, `image`, `descr`) VALUES ('$model','$no','$time1', '$time2', '$fare', '$address', '$mobile', '$name', '$descr')") or die(mysqli_error());
   $result=mysqli_query($conn,$sql);
   if($result)
   {
